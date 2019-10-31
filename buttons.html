@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>buttons</title>
+    <script>
+        const Buttons = document.createElement("template");
+       Buttons.innerHTML = `<style>
+
+            #a{
+                height:2cm;
+                width: 2cm;
+            background-color: chartreuse     
+            }
+            #b{
+                height:2cm;
+                width: 2cm;
+            background-color: rgb(230, 25, 25)     
+            }#c{
+                height:2cm;
+                width: 2cm;
+            background-color: rgb(221, 138, 14)     
+            }#e{
+                height:2cm;
+                width: 2cm;
+            background-color: rgb(31, 8, 131)     
+            }#f{
+                height:2cm;
+                width: 2cm;
+            background-color: rgb(0, 255, 21)     
+            }
+            #d{
+                height:2cm;
+                width: 2cm;
+            background-color: rgb(255, 0, 149)
+            }
+            #g{
+                height:2cm;
+                width: 2cm;
+                background-color: rgb(30, 141, 214)
+            }   
+            #h{
+                height:2cm;
+                width: 2cm;
+                background-color: rgb(251, 255, 0)
+            }   
+            #i{
+                height:2cm;
+                width: 2cm;
+                background-color: rgb(255, 0, 21)
+            }      
+            </style>
+            <div>
+                    <button id="a">1</button>
+                    <button id="b">2</button>
+                    <button id="c">3</button>
+                </div>
+                <div>
+                    <button id="e">4</button>
+                    <button id="f">5</button>
+                    <button id="d">6</button>
+                </div>
+                <div>
+                    <button id="g">7</button>
+                    <button id="h">8</button>
+                    <button id="i">9</button>
+                </div>`;
+        class buttonsColor extends HTMLElement{
+            constructor() {
+    super();
+    this._shadowRoot = this.attachShadow({ mode: 'open' });
+    this._shadowRoot.appendChild(Buttons.content.cloneNode(true));
+    // this.$container = this._shadowRoot.querySelector('.container')
+    // this.attrs = {}
+  }
+        }
+        window.customElements.define('my-button', buttonsColor);
+
+    </script>
+    
+    
+    
+    
+</head>
+<body>
+    <my-button></my-button>
+    <my-button></my-button>
+    <my-button></my-button>
+  
+</body>
+
+</html>
